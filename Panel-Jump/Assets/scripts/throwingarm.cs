@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class throwingarm : MonoBehaviour
+{
+    public GameObject throwingrock;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+            Instantiate(throwingrock, transform.position, transform.rotation);
+
+    }
+}

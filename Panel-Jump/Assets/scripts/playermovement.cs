@@ -9,6 +9,7 @@ public class playermovement : MonoBehaviour
     public Rigidbody rb;
     public float jumpforce = 5f;
     public bool grounded = false;
+   // public GameObject throwingrock;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,10 @@ public class playermovement : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.Space) && grounded)
             rb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
-       
+
+        //if (Input.GetKeyDown(KeyCode.F))
+          //  Instantiate(throwingrock, transform.position, transform.rotation);
+
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (FallMultiplier - 1) * Time.captureDeltaTime;
