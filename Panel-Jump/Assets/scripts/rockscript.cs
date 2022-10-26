@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class rockscript : MonoBehaviour
 {
-    float rockspeed = 10f;
+
+    float rockspeed = 100f;
     public Rigidbody body;
 
     // Start is called before the first frame update
@@ -17,7 +18,9 @@ public class rockscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += rockspeed * transform.forward * Time.deltaTime;
+        transform.forward = body.transform.position * rockspeed * Time.deltaTime;
+       
+        Destroy(body, 2f);
     }
 
     private void OnCollisionEnter(Collision collision)

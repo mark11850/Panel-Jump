@@ -5,6 +5,8 @@ using UnityEngine;
 public class throwingarm : MonoBehaviour
 {
     public GameObject throwingrock;
+    float rockspeed = 100f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +20,12 @@ public class throwingarm : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
             Instantiate(throwingrock, transform.position, transform.rotation);
 
+        transform.forward = throwingrock.transform.position * rockspeed * Time.deltaTime;
+
+        Destroy(throwingrock, 2f);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("ouch");
     }
 }
