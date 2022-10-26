@@ -7,9 +7,9 @@ public class respawn : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform respawnpoint;
 
-    private void OnTriggerEnter(Collider player)
+    private void OnTriggerEnter(Collider Cactus)
     {
-        player.transform.position = respawnpoint.transform.position;
+        Cactus.transform.position = respawnpoint.transform.position;
         
     }
 }
