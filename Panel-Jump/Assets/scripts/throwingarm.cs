@@ -21,11 +21,6 @@ public class throwingarm : MonoBehaviour
             Instantiate(throwingrock, transform.position, transform.rotation);
 
         transform.forward = throwingrock.transform.position * rockspeed * Time.deltaTime;
+    }
 
-        Destroy(throwingrock, 2f);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("ouch");
-    }
 }
